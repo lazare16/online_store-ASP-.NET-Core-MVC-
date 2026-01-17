@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../Online Store API/Online Store API.csproj" />
+  <Project Path="online store MVC.csproj" />
+</Solution>

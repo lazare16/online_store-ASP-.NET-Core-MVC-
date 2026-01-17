@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jXqxIO+WHqE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lazare\\source\\repos\\online_store-ASP-.NET-Core-MVC-\\Online Store API\\Online Store API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lazare\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "C:\\Users\\lazare\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
