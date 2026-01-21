@@ -1,0 +1,158 @@
+@model online_store_MVC.Models.Order
+
+@{
+    ViewData["Title"] = "Checkout";
+    var cart = ViewBag.Cart as online_store_MVC.Models.Cart;
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">
+        <i class="bi bi-credit-card"></i> Checkout
+    </h1>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-person-fill"></i> Shipping Information</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Order" asp-action="PlaceOrder" method="post" id="checkoutForm">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label asp-for="CustomerName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <input asp-for="CustomerName" class="form-control" required placeholder="John Doe" />
+                                <span asp-validation-for="CustomerName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Email" class="form-label">Email <span class="text-danger">*</span></label>
+                                <input asp-for="Email" type="email" class="form-control" required placeholder="john.doe@example.com" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                <input asp-for="PhoneNumber" type="tel" class="form-control" required placeholder="(555) 123-4567" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Address" class="form-label">Street Address <span class="text-danger">*</span></label>
+                            <input asp-for="Address" class="form-control" required placeholder="123 Main Street, Apt 4B" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                                <label asp-for="City" class="form-label">City <span class="text-danger">*</span></label>
+                                <input asp-for="City" class="form-control" required placeholder="New York" />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="State" class="form-label">State <span class="text-danger">*</span></label>
+                                <input asp-for="State" class="form-control" required placeholder="NY" />
+                                <span asp-validation-for="State" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label asp-for="ZipCode" class="form-label">Zip Code <span class="text-danger">*</span></label>
+                                <input asp-for="ZipCode" class="form-control" required placeholder="10001" />
+                                <span asp-validation-for="ZipCode" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill"></i> All fields marked with <span class="text-danger">*</span> are required.
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-4">
+                            <a asp-controller="Cart" asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Back to Cart
+                            </a>
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-check-circle"></i> Place Order
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card shadow-sm mb-3">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="bi bi-bag-check"></i> Order Summary</h5>
+                </div>
+                <div class="card-body">
+                    @if (cart != null && cart.Items.Any())
+                    {
+                        <div class="order-items mb-3">
+                            @foreach (var item in cart.Items)
+                            {
+                                <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-0">@item.ProductName</h6>
+                                        <small class="text-muted">Qty: @item.Quantity × $@item.Price.ToString("F2")</small>
+                                    </div>
+                                    <span class="fw-bold">$@((item.Price * item.Quantity).ToString("F2"))</span>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span>$@cart.TotalAmount.ToString("F2")</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Shipping:</span>
+                            <span class="text-success">FREE</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tax:</span>
+                            <span>$0.00</span>
+                        </div>
+                        <hr />
+                        <div class="d-flex justify-content-between mb-0">
+                            <strong class="fs-5">Total:</strong>
+                            <strong class="text-primary fs-4">$@cart.TotalAmount.ToString("F2")</strong>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h6><i class="bi bi-shield-check text-success"></i> Secure Checkout</h6>
+                    <p class="card-text small text-muted mb-2">Your information is protected with SSL encryption.</p>
+                    <hr />
+                    <h6><i class="bi bi-truck text-primary"></i> Free Shipping</h6>
+                    <p class="card-text small text-muted mb-2">Enjoy free shipping on all orders.</p>
+                    <hr />
+                    <h6><i class="bi bi-arrow-return-left text-info"></i> Easy Returns</h6>
+                    <p class="card-text small text-muted mb-0">30-day return policy on all items.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    .order-items {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+</style>

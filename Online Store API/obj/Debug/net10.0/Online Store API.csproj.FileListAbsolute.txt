@@ -1,0 +1,38 @@
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.csproj.AssemblyReference.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.AssemblyInfoInputs.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.AssemblyInfo.cs
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.csproj.CoreCompileInputs.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.sourcelink.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\appsettings.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.staticwebassets.endpoints.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.exe
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.deps.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.runtimeconfig.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Online Store API.pdb
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\scopedcss\bundle\Online Store API.styles.css
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online S.0FCE59C5.Up2Date
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\refint\Online Store API.dll
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.pdb
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\Online Store API.genruntimeconfig.cache
+C:\Users\lazare\source\repos\online_store-ASP-.NET-Core-MVC-\Online Store API\obj\Debug\net10.0\ref\Online Store API.dll

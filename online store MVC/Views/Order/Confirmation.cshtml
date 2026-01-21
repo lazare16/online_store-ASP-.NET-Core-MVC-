@@ -1,0 +1,156 @@
+@model online_store_MVC.Models.Order
+
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-4">
+                <div class="success-animation mb-3">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                </div>
+                <h1 class="text-success mb-3">Order Confirmed!</h1>
+                <p class="lead text-muted">Thank you for your order. We've received your order and will process it shortly.</p>
+            </div>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-receipt"></i> Order Details</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Order Number:</strong></p>
+                            <p class="text-primary fs-5 mb-0">@Model.OrderNumber</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p class="mb-1"><strong>Order Date:</strong></p>
+                            <p class="mb-0">@Model.OrderDate.ToString("MMMM dd, yyyy - hh:mm tt")</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Status:</strong></p>
+                            <span class="badge bg-warning text-dark">@Model.Status</span>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p class="mb-1"><strong>Total Amount:</strong></p>
+                            <p class="text-success fs-4 mb-0">$@Model.TotalAmount.ToString("F2")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="bi bi-person-circle"></i> Shipping Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <p class="mb-1"><strong>Name:</strong></p>
+                            <p class="mb-0">@Model.CustomerName</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p class="mb-1"><strong>Email:</strong></p>
+                            <p class="mb-0">@Model.Email</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p class="mb-1"><strong>Phone:</strong></p>
+                            <p class="mb-0">@Model.PhoneNumber</p>
+                        </div>
+                        <div class="col-md-12">
+                            <p class="mb-1"><strong>Shipping Address:</strong></p>
+                            <p class="mb-0">
+                                @Model.Address<br />
+                                @Model.City, @Model.State @Model.ZipCode
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-bag-check"></i> Order Items</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th class="text-center">Quantity</th>
+                                    <th class="text-end">Price</th>
+                                    <th class="text-end">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrderItems)
+                                {
+                                    <tr>
+                                        <td>
+                                            <strong>@item.ProductName</strong><br />
+                                            <small class="text-muted">Product ID: @item.ProductId</small>
+                                        </td>
+                                        <td class="text-center">@item.Quantity</td>
+                                        <td class="text-end">$@item.Price.ToString("F2")</td>
+                                        <td class="text-end"><strong>$@item.Subtotal.ToString("F2")</strong></td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-active">
+                                    <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                                    <td class="text-end"><strong class="text-success fs-5">$@Model.TotalAmount.ToString("F2")</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info">
+                <h6 class="alert-heading"><i class="bi bi-envelope"></i> Confirmation Email</h6>
+                <p class="mb-0">A confirmation email has been sent to <strong>@Model.Email</strong> with your order details.</p>
+            </div>
+
+            <div class="text-center mt-4 mb-5">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg me-2">
+                    <i class="bi bi-house-door"></i> Back to Home
+                </a>
+                <a asp-controller="Order" asp-action="MyOrders" class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-list-ul"></i> View My Orders
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .success-animation {
+        animation: scaleIn 0.5s ease-in-out;
+    }
+
+    @@keyframes scaleIn {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
